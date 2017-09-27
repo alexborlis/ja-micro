@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.sixt.service.invoicing.api;
+
+option java_multiple_files = false;
+option java_package = "com.sixt.service.framework.intercepted.api";
+
+service InterceptedService {
+    rpc InterceptedMethod (InterceptedRequest) returns (InterceptedResponse) {}
+}
+
+message InterceptedRequest {
+    string id = 1;
+    string message = 2;
+}
+
+message InterceptedResponse {
+    enum Error {
+        TECHNICAL = 0;
+        INVALID_ARGUMENT = 1;
+    }
+}
